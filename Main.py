@@ -1,5 +1,9 @@
 import numpy as np
+#import tkinter
+#import matplotlib
+#matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
+from IPython.display import clear_output
 from Gridworld import Gridworld
 from QLearningAgent import QLearningAgent
 from QTable import QTable
@@ -20,7 +24,6 @@ for i in range(n_episodes):
     # agent = RandomAgent()
     agent = QLearningAgent(alpha, gamma, epsilon)
 
-
     while not env.is_terminal(env.agent_position):
         state = env.agent_position
         available_actions = env.get_available_actions()
@@ -40,12 +43,17 @@ for i in range(n_episodes):
         grid[bomb] = 1
         grid[gold] = 2
         #print(grid)
-        plt.matshow(grid)
-        plt.show()
-        # plt.plot(reward_array);
-        # plt.title("Q-Learning agent")
-        # plt.xlabel('Episode')
-        # plt.ylabel('Reward')
+        #plt.ion()
+        #fig = plt.figure()
+        #plt.matshow(grid)
+        #plt.show()
+        #plt.draw()
+        #plt.pause(0.02)
+        #plt.plot(reward_array);
+        #plt.title("Q-Learning agent")
+        #plt.xlabel('Episode')
+        #plt.ylabel('Reward')
+        #plt.show()
         #clear_output(wait=True)
 
     reward_array[i] = total_reward
