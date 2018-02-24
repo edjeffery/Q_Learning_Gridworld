@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from Gridworld import Gridworld
 from QLearningAgent import QLearningAgent
 from QTable import QTable
@@ -38,9 +39,9 @@ for i in range(n_episodes):
         grid[pos] = 3
         grid[bomb] = 1
         grid[gold] = 2
-        # print(grid)
-        #plt.matshow(grid)
-        #plt.show()
+        #print(grid)
+        plt.matshow(grid)
+        plt.show()
         # plt.plot(reward_array);
         # plt.title("Q-Learning agent")
         # plt.xlabel('Episode')
@@ -51,7 +52,8 @@ for i in range(n_episodes):
 
 print(q.q_table)
 
-# plt.plot(reward_array);
-# plt.title("Q-Learning agent")
-# plt.xlabel('Episode')
-# plt.ylabel('Reward')
+plt.plot(reward_array);
+plt.title("Q-Learning agent")
+plt.xlabel('Episode')
+plt.ylabel('Reward')
+plt.show()
